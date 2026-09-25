@@ -16,7 +16,7 @@ class ComparisonPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.card,
@@ -295,13 +295,17 @@ class _HistoryChartState extends State<HistoryChart>
     final vals  = _vals;
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: AppTheme.cardSolid,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: AppTheme.cardBorder),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.06), blurRadius: 20, spreadRadius: 2),
+          BoxShadow(
+            color: color.withValues(alpha: 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
         ],
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -534,8 +538,11 @@ class _HistoryChartState extends State<HistoryChart>
             LineChartBarData(
               spots: spots,
               isCurved: true,
-              color: color,
-              barWidth: 2.5,
+              gradient: LinearGradient(
+                colors: [color.withValues(alpha: 0.6), color],
+              ),
+              barWidth: 3,
+              isStrokeCapRound: true,
               dotData: FlDotData(
                 show: true,
                 getDotPainter: (_, __, ___, ____) => FlDotCirclePainter(
@@ -592,7 +599,7 @@ class WeatherAnalyticsPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.only(left: 2, bottom: 8),
@@ -648,11 +655,19 @@ class WeatherAnalyticsPanel extends StatelessWidget {
       Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: AppTheme.cardSolid,
-          borderRadius: BorderRadius.circular(12),
-          border: Border(left: BorderSide(color: color, width: 3)),
+          gradient: LinearGradient(
+            colors: [color.withValues(alpha: 0.10), AppTheme.cardSolid],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: color.withValues(alpha: 0.22)),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.06), blurRadius: 10)
+            BoxShadow(
+              color: color.withValues(alpha: 0.08),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
+            ),
           ],
         ),
         child: Column(
