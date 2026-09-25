@@ -352,10 +352,11 @@ class _InfoRow extends StatelessWidget {
             fontSize: 12,
           ),
         ),
-        const Spacer(),
-        Flexible(
+        const SizedBox(width: 12),
+        Expanded(
           child: Text(
             value,
+            maxLines: 2,
             style: GoogleFonts.outfit(
               color: valueColor ?? AppTheme.text,
               fontSize: 12,
@@ -429,7 +430,7 @@ class _Phase2Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.cardSolid,
@@ -538,7 +539,7 @@ class _CampusAccountCard extends StatelessWidget {
     final photoUrl = state.userPhotoUrl;
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.cardSolid,
@@ -806,7 +807,7 @@ class _NotificationTestCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.cardSolid,

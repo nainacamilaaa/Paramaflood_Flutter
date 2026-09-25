@@ -192,7 +192,7 @@ class DashboardScreen extends StatelessWidget {
                       if (!data.hasReceivedLiveData)
                         SliverToBoxAdapter(
                           child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 12),
+                            margin: const EdgeInsets.symmetric(horizontal: 16),
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               color: AppTheme.heroAcc.withValues(alpha: 0.08),
@@ -922,7 +922,7 @@ class _TestPanelState extends State<_TestPanel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: AppTheme.cardSolid,
         borderRadius: BorderRadius.circular(20),

@@ -78,7 +78,9 @@ class _AiInsightPanelState extends State<AiInsightPanel> {
                     ),
                     const SizedBox(height: 1),
                     Text(
-                      'Ringkasan Cuaca & Prediksi Banjir',
+                      'Ringkasan & Prediksi Banjir',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.outfit(
                         color: AppTheme.text,
                         fontSize: 14,

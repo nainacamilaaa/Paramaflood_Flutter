@@ -45,9 +45,12 @@ class SensorCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [color.withValues(alpha: 0.10), AppTheme.cardSolid],
+            colors: [
+              Color.alphaBlend(color.withValues(alpha: 0.08), AppTheme.cardSolid),
+              AppTheme.cardSolid,
+            ],
             begin: Alignment.topCenter,
-            end: const Alignment(0, 0.2),
+            end: const Alignment(0, 0.1),
           ),
           color: AppTheme.cardSolid,
           borderRadius: BorderRadius.circular(22),
@@ -94,7 +97,7 @@ class SensorCard extends StatelessWidget {
                                 style: GoogleFonts.outfit(
                                   color: color,
                                   fontSize: 11,
-                                  letterSpacing: 1.2,
+                                  letterSpacing: 0.4,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -114,7 +117,7 @@ class SensorCard extends StatelessWidget {
                   ),
                   Container(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                        const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       color: color.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(999),

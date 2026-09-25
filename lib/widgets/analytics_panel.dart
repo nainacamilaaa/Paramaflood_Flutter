@@ -19,7 +19,7 @@ class ComparisonPanel extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.card,
+        color: AppTheme.cardSolid,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: AppTheme.cardBorder),
         boxShadow: [
@@ -601,14 +601,6 @@ class WeatherAnalyticsPanel extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 2, bottom: 8),
-          child: Text('WEATHER ANALYTICS',
-              style: GoogleFonts.outfit(
-                  color: AppTheme.heroAcc,
-                  fontSize: 10,
-                  letterSpacing: 2.5)),
-        ),
         GridView.count(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -656,7 +648,10 @@ class WeatherAnalyticsPanel extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [color.withValues(alpha: 0.10), AppTheme.cardSolid],
+            colors: [
+              Color.alphaBlend(color.withValues(alpha: 0.10), AppTheme.cardSolid),
+              AppTheme.cardSolid,
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
