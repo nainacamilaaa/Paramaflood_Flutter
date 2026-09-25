@@ -374,7 +374,7 @@ class DashboardScreen extends StatelessWidget {
                         const SliverToBoxAdapter(child: _TestPanel()),
                         const SliverToBoxAdapter(child: SizedBox(height: 20)),
                       ],
-                      const SliverToBoxAdapter(child: SizedBox(height: 20)),
+                      const SliverToBoxAdapter(child: SizedBox(height: 110)),
                     ],
                   ),
                 );
