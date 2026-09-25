@@ -86,21 +86,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
 
           // ── Accent glow (follows current page) ──
-          Positioned(
-            top: -140,
-            left: -100,
-            right: -100,
+          Positioned.fill(
             child: IgnorePointer(
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 500),
-                height: 460,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    colors: [
-                      accent.withValues(alpha: 0.18),
-                      accent.withValues(alpha: 0.0),
-                    ],
+              child: Align(
+                alignment: const Alignment(0, -0.4),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
+                  width: 460,
+                  height: 460,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        accent.withValues(alpha: 0.18),
+                        accent.withValues(alpha: 0.0),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -267,7 +268,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 60),
+          const Spacer(flex: 2),
           // ── Icon container with glow ──
           Container(
             width: 120,
@@ -334,7 +335,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               .animate(key: ValueKey('sub_$index'))
               .fadeIn(delay: 300.ms, duration: 400.ms)
               .slideY(begin: 0.15, duration: 400.ms),
-          const Spacer(),
+          const Spacer(flex: 3),
         ],
       ),
     );
