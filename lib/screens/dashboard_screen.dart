@@ -1016,6 +1016,10 @@ class _TestPanelState extends State<_TestPanel> {
                 ),
               ),
               backgroundColor: AppTheme.heroAcc,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               duration: const Duration(seconds: 2),
             ),
           );
